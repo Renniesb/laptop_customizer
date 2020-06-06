@@ -15,7 +15,7 @@ export default function Feature(props){
             className="feature__option"
             name={slugify(props.feature)}
             checked={item.name === props.selected[props.feature].name}
-            onChange={e => this.updateFeature(props.feature, item)}
+            onChange={e => props.updateFeature(props.feature, item)}
             />
             <label htmlFor={itemHash} className="feature__label">
             {item.name} ({props.currency.format(item.cost)})

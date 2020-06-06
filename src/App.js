@@ -46,14 +46,14 @@ class App extends Component {
 
   render() {
      
-
+    
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <CustomizeLabtop {...this.props} currency={USCurrencyFormat} selected={this.state.selected}/>
+          <CustomizeLabtop {...this.props} updateFeature={this.updateFeature} currency={USCurrencyFormat} selected={this.state.selected}/>
           <YourCart currency={USCurrencyFormat} selected={this.state.selected} />
         </main>
       </div>
