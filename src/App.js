@@ -53,7 +53,7 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <CustomizeLabtop {...this.props} updateFeature={this.updateFeature} currency={USCurrencyFormat} selected={this.state.selected}/>
+          <CustomizeLabtop updateFeature={this.updateFeature} currency={USCurrencyFormat} selected={this.state.selected}/>
           <YourCart currency={USCurrencyFormat} selected={this.state.selected} />
         </main>
       </div>

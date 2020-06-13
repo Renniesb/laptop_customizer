@@ -1,26 +1,16 @@
 import React from 'react';
 import slugify from 'slugify';
+import FeatureItem from '../FeatureItem';
+import features from '../features.js';
 
 export default function Feature(props){
     
     const featureHash = props.feature + '-' + props.idx;
-    const options = props.features[props.feature].map(item => {
+    const options = features[props.feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
         return (
             
-        <div key={itemHash} className="feature__item">
-            <input
-            type="radio"
-            id={itemHash}
-            className="feature__option"
-            name={slugify(props.feature)}
-            checked={item.name === props.selected[props.feature].name}
-            onChange={e => props.updateFeature(props.feature, item)}
-            />
-            <label htmlFor={itemHash} className="feature__label">
-            {item.name} ({props.currency.format(item.cost)})
-            </label>
-        </div>
+            <FeatureItem {...props} itemHash = {itemHash} item={item}/>
         );
     });
     
